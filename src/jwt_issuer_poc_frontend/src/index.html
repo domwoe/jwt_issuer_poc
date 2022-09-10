@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
+    <link rel=stylesheet href=https://cdn.jsdelivr.net/npm/pretty-print-json@1.2/dist/pretty-print-json.css>
     <title>jwt_issuer_poc</title>
     <base href="/" />
     <link rel="icon" href="favicon.ico" />
@@ -14,11 +15,14 @@
       <br />
       <br />
       <form action="#">
-        <label for="name">Enter your name: &nbsp;</label>
-        <input id="name" alt="Name" type="text" />
-        <button type="submit">Click Me!</button>
+        <select name="kind" id="token_kind">
+          <option value="mac">HMAC</option>
+          <option value="tecdsa" selected>tECDSA </option>
+      </select>
+        <button type="submit">Issue JWT</button>
       </form>
-      <section id="greeting"></section>
+      <pre id=decoded class=json-container></pre>
+      <pre id=result class=json-container></pre>
     </main>
   </body>
 </html>

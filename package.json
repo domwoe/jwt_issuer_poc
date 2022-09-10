@@ -2,7 +2,12 @@
   "name": "jwt_issuer_poc_frontend",
   "version": "0.1.0",
   "description": "Internet Computer starter application",
-  "keywords": ["Internet Computer", "Motoko", "JavaScript", "Canister"],
+  "keywords": [
+    "Internet Computer",
+    "Motoko",
+    "JavaScript",
+    "Canister"
+  ],
   "scripts": {
     "build": "webpack",
     "prebuild": "npm run copy:types",
@@ -34,5 +39,11 @@
     "last 2 firefox version",
     "last 2 safari version",
     "last 2 edge version"
-  ]
+  ],
+  "dependencies": {
+    "did-jwt": "^6.8.0",
+    "did-resolver": "^4.0.0",
+    "key-did-resolver": "^2.1.1",
+    "pretty-print-json": "^1.2.6"
+  }
 }

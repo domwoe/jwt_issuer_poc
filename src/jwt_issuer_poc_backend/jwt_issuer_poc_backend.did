@@ -1,3 +1,10 @@
+type Result = 
+    variant {
+        Err: text;
+        Ok: text;
+};
+
 service : {
-    "greet": (text) -> (text) query;
+    "issue": (text) -> (Result);
+    "tecdsa_public_key": (text) -> (Result);
 }

@@ -9,6 +9,14 @@ edition = "2021"
 crate-type = ["cdylib"]
 
 [dependencies]
+base58 = "0.2.0"
+base64-url = "1.4.13"
 candid = "0.7.14"
+hex = "0.3.1"
+hmac = "0.12.1"
 ic-cdk = "0.5.2"
 ic-cdk-macros = "0.5.2"
+k256 = { version = "0.11.4", features = ["ecdsa", "jwk"], default-features = false }
+serde = "1"
+serde_json = "1.0.85"
+sha2 = "0.10.5"

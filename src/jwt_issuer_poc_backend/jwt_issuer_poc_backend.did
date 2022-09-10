@@ -8,4 +8,8 @@ service : {
     "issue": (text) -> (Result);
     "tecdsa_public_key": (text) -> (Result);
     "get_iccsa": (text) -> (Result) query;
+    "delete_iccsa": (text) -> (variant {
+        Ok: null;
+        Err: text;
+    });
 }

@@ -39,8 +39,10 @@ document.querySelector("form").addEventListener("submit", async (e) => {
   } else {
 
     if (kind == "iccsa") {
-      const real_iccsa_sig = await jwt_issuer_poc_backend.get_iccsa(decoded.signature); 
+      let hash = decoded.signature
+      const real_iccsa_sig = await jwt_issuer_poc_backend.get_iccsa(hash); 
       decoded.signature = real_iccsa_sig.Ok;
+      const _ = await jwt_issuer_poc_backend.get_iccsa(hash); 
       document.getElementById('decoded').innerHTML = prettyPrintJson.toHtml(decoded);
     }
     

@@ -348,6 +348,16 @@ async fn get_iccsa(hash: String) -> Result<String, String> {
 }
 
 #[update]
+async fn delete_iccsa(hash: String) -> Result<(), String> {
+    let hash = base64_url::decode(&hash).expect("Couldn't base64url decode.");
+    let seed = hash[0..32].try_into().unwrap();
+    let msg_hash = hash[32..64].try_into().unwrap(); 
+    
+    SIGS.with(|s| s.borrow_mut().delete(seed, msg_hash));
+    Ok(())
+}
+
+#[update]
 async fn tecdsa_public_key(encoding: String) -> Result<String, String> {
     let pk = PUB_KEY.with(|pk| pk.borrow().clone());
 

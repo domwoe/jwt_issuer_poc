@@ -37,6 +37,13 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     const elem = document.getElementById('result');
     elem.innerHTML = prettyPrintJson.toHtml(verificationResponse);
   } else {
+
+    if (kind == "iccsa") {
+      const real_iccsa_sig = await jwt_issuer_poc_backend.get_iccsa(decoded.signature); 
+      decoded.signature = real_iccsa_sig.Ok;
+      document.getElementById('decoded').innerHTML = prettyPrintJson.toHtml(decoded);
+    }
+    
     const elem = document.getElementById('result');
     elem.innerHTML = "Verification not implemented for kind: " + kind;
 

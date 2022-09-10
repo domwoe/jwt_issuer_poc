@@ -1,0 +1,36 @@
+{
+  "canisters": {
+    "jwt_issuer_poc_backend": {
+      "candid": "src/jwt_issuer_poc_backend/jwt_issuer_poc_backend.did",
+      "package": "jwt_issuer_poc_backend",
+      "type": "rust"
+    },
+    "jwt_issuer_poc_frontend": {
+      "dependencies": [
+        "jwt_issuer_poc_backend"
+      ],
+      "frontend": {
+        "entrypoint": "src/jwt_issuer_poc_frontend/src/index.html"
+      },
+      "source": [
+        "src/jwt_issuer_poc_frontend/assets",
+        "dist/jwt_issuer_poc_frontend/"
+      ],
+      "type": "assets"
+    }
+  },
+  "defaults": {
+    "build": {
+      "args": "",
+      "packtool": ""
+    }
+  },
+  "dfx": "0.11.2",
+  "networks": {
+    "local": {
+      "bind": "127.0.0.1:8000",
+      "type": "ephemeral"
+    }
+  },
+  "version": 1
+}

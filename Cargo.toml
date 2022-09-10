@@ -1,0 +1,4 @@
+[workspace]
+members = [
+    "src/jwt_issuer_poc_backend",
+]
